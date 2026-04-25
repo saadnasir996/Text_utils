@@ -36,24 +36,34 @@ function App() {
       })
     }
     else {
-
+    
 
     }
   }
   const toggleBlue = () => {
-    setMode('dark');
+  if(mode === 'dark') {
     document.body.style.backgroundColor = '#1f6ebc';
     document.querySelectorAll(".btn").forEach(btn => {
       btn.style.backgroundColor = 'blue';
     })
   }
+  else{
+
+  }
+}
   const toggleGreen = () => {
-    setMode('dark');
-    document.body.style.backgroundColor = '#16b023';
+   if(mode === 'dark'){
+   document.body.style.backgroundColor = '#16b023';
     document.querySelectorAll(".btn").forEach(btn => {
       btn.style.backgroundColor = 'green';
     })
   }
+
+  else{
+    
+  }
+   }
+    
   const toggleMode = () => {
     if (mode === 'light') {
       setMode('dark');

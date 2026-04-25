@@ -23,16 +23,16 @@ export default function Navbar(props) {
 
             </ul>
             <div className={`colorPall text-${props.mode === 'light' ? 'dark' : 'light'}`}>
-              <div className="form-check form-check-inline">
-                <input className="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" onChange={props.toggleRed} />
+              <div className="form-check form-check-inline" >
+                <input className="form-check-input" type="checkbox" disabled={props.mode === 'light'}  id="inlineCheckbox1" value="option1" onChange={props.toggleRed} />
                 <label className="form-check-label" for="inlineCheckbox1">Red</label>
               </div>
               <div className="form-check form-check-inline">
-                <input className="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" onToggle={props.toggleBlue} />
+                <input className="form-check-input" type="checkbox" id="inlineCheckbox2"  disabled={props.mode === 'light'} value="option2" onChange={props.toggleBlue} />
                 <label className="form-check-label" for="inlineCheckbox2">Blue</label>
               </div>
               <div className="form-check form-check-inline">
-                <input className="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" onToggle={props.toggleGreen} />
+                <input className="form-check-input" type="checkbox" id="inlineCheckbox3"   disabled={props.mode === 'light'} value="option3" onChange={props.toggleGreen} />
                 <label className="form-check-label" for="inlineCheckbox3">Green</label>
               </div>
             </div>
