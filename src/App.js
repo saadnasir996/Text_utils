@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 
-import { Routes, Route } from "react-router-dom";
+import { Router, Routes, Route } from "react-router-dom";
 // import Home from "./pages/Home";
 
 
@@ -81,21 +81,18 @@ function App() {
   }
   return (
     <>
-      <Navbar text="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode} toggleRed={toggleRed} toggleBlue={toggleBlue} toggleGreen={toggleGreen} />
-
+      <Navbar text="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode} toggleRed={toggleRed} toggleBlue={toggleBlue} toggleGreen={toggleGreen} />
+ <Alert alert={alert} mode={mode} />
       <Routes>
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/textform" element=
-            { <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />
+        <Route path="/about" element={<About mode = {mode} />}  />
+        <Route path="/" element=
+            { <TextForm showAlert={showAlert} heading="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" mode={mode} />
         } />
        </Routes> 
   
-      <Alert alert={alert} mode={mode} />
-      <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />
-
-
+     
+      {/* <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} /> */}
     </>
-
   );
 }
 
